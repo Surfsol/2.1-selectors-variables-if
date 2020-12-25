@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    .family{
+      margin-left: 5%;
+    }
+    .character{
+      display:flex;
+      
+    }
+    p{
+      margin-right:1%;
+    }
+    #dadPic, #momPic, #sonPic, #daughterPic{
+      width: 20%;
+      height: 20%;
+    }
+  </style>
+  <body>
+    <div class="family">
+      <h1>The Simpsons</h1>
+      <img id="dadPic"></img>
+      <div class="character">
+       <p>Name: <span id="dadN"></span></p>
+       <p>Age: <span id="dadAge"></span></p>
+       <p>Age in 5 years: <span id="dadAge5"></span></p>
+       <p>Hobbies: <span id="dadHobbies"></span></p>
+      </div>
+      <div id="dadInfo"></div>
+      <br>
+      <img id="momPic"></img>
+      <div class="character">
+        <p>Name: <span id="momN"></span></p>
+        <p>Age: <span id="momAge"></span></p>
+        <p>Age last year: <span id="momAgeLast"></span></p>
+        <p>Hobbies: <span id="momHobbies"></span></p>
+      </div>
+      <div id="momInfo"></div>
+      <br>
+      <img id="sonPic"></img>
+      <div class="character">
+        <p>Name: <span id="sonN"></span></p>
+        <p>Age: <span id="sonAge"></span></p>
+        <p>Half his age: <span id="sonAgeHalf"></span></p>
+        <p>Hobbies: <span id="sonHobbies"></span></p>
+      </div>
+      <div id="sonInfo"></div>
+      <br>
+      <img id="daughterPic"></img>
+      <div class="character">
+        <p>Name: <span id="daughterN"></span></p>
+        <p>Age: <span id="daughterAge"></span></p>
+        <p>Twice her age: <span id="daughterAgeTwice"></span></p>
+        <p>Hobbies: <span id="daughterHobbies"></span></p>
+      </div>
+      <div id="daughterInfo"></div>
+    </div>
+    
+    <script>
+      //what is const?
+      const dadName = "Homer"; //string
+      const dadAge = 40; //number
+      const dadHobbies = "drinking beer"; //string
+      const aboutDad = `My name is ${dadName}, I am ${dadAge}, and I love to ${dadHobbies}`; //template string
+      const dadPicture = "./assets/images/homer.jpg"
+
+      const momName = "Marge";
+      const momAge = 32;
+      const momHobbies = "do my hair";
+      const aboutMom = 'My name is ' + momName + ', I am ' + momAge + ', and I love to ' + momHobbies; //string concatenation
+      const momPicture = "./assets/images/marge.png"
+
+      const sonName = "Bart";
+      const sonAge = 10;
+      const sonHobbies = "getting in trouble";
+      const aboutSon = `My name is ${sonName}, I am ${sonAge}, and I love to ${sonHobbies}`;
+      const sonPicture = "./assets/images/bart.png"
+
+      const daughterName = "Lisa";
+      const daughterAge = 8;
+      const daughterHobbies = "playing the saxophone";
+      const aboutDaughter = `My name is ${daughterName}, I am ${daughterAge}, and I love to ${daughterHobbies}`
+      const daughterPicture = "./assets/images/lisa.png"
+
+      document.getElementById("dadN").innerHTML = dadName; //find id dadName, add html
+      document.getElementById("dadAge").innerHTML = dadAge;
+      document.getElementById("dadAge5").innerHTML = dadAge + 5;
+      document.getElementById("dadHobbies").innerHTML = dadHobbies;
+      document.getElementById("dadInfo").innerHTML = aboutDad;
+
+      document.getElementById("momN").innerHTML = momName;
+      document.getElementById("momAge").innerHTML = momAge;
+      document.getElementById("momAgeLast").innerHTML = momAge - 1;
+      document.getElementById("momHobbies").innerHTML = momHobbies;
+      document.getElementById("momInfo").innerHTML = aboutMom;
+
+      document.getElementById("sonN").innerHTML = sonName;
+      document.getElementById("sonAge").innerHTML = sonAge;
+      document.getElementById("sonAgeHalf").innerHTML = sonAge / 2;
+      document.getElementById("sonHobbies").innerHTML = sonHobbies;
+      document.getElementById("sonInfo").innerHTML = aboutSon;
+
+      document.getElementById("daughterN").innerHTML = daughterName;
+      document.getElementById("daughterAge").innerHTML = daughterAge;
+      document.getElementById("daughterAgeTwice").innerHTML = daughterAge * 2;
+      document.getElementById("daughterHobbies").innerHTML = daughterHobbies;
+      document.getElementById("daughterInfo").innerHTML = aboutDaughter;
+
+
+      //Images
+      if (dadName === "Homer"){
+      document.getElementById("dadPic").src = dadPicture;
+      } else {
+        document.getElementById("dadPic").src =  "./assets/images/dontKnow.jpg";
+      }
+
+      if (momName === "Marge"){
+      document.getElementById("momPic").src = momPicture;
+      } else {
+        document.getElementById("dadPic").src =  "./assets/images/dontKnow.jpg";
+      }
+
+      if (sonName === "Bart"){
+      document.getElementById("sonPic").src = sonPicture;
+     } else {
+        document.getElementById("dadPic").src =  "./assets/images/dontKnow.jpg";
+      }
+
+      if (daughterName === "Lisa"){
+      document.getElementById("daughterPic").src = daughterPicture;
+      } else {
+        document.getElementById("dadPic").src =  "./assets/images/dontKnow.jpg";
+      }
+
+    </script>
+  </body>
+</html>
